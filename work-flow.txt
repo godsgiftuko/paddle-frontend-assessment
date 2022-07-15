@@ -1,0 +1,163 @@
+PROJECT WORK FLOW
+
+# TITLE - "Paddle Frontend Assessment"
+# AUTHOR - "God'sgift Matthew Uko"
+# REPO - "https://github.com/godsgiftuko/paddle-frontend-assessment"
+# DESC - "All in one affliate marketing and tracking software that automates and optimize your campaigns."
+
+
+@. Define the problems clearly.
+
+** Task1
+	The first part tests your design proficiency and how well you can handle your CSS.
+
+	1. In your github, create a repo with the name "Paddle-frontend-assessment". #####
+
+	2. Add a README.md; and explain a detail specificaton of the app you're developing. #####
+		a) - List all the libraries you'll need to implement the app features.
+		b) - A step by step guide on how to run the app.
+		c) - What you would like to improve in the app if given more time (optional).
+		d) - When finished, send the link to repositry to https://docs.google.com/forms/d/e/1FAIpQLSdIPZjPB3J-2FCzrpRv5BZ_utA44FiWF01YlaISgpiKQzg-UQ/viewform?usp=sf_link
+
+	3. Reproduce the coming soon design prototype in either jsx or tsx and css. #####
+
+	4. Landing page should be found via "/comingsoon" route. #####
+
+	5. About us page should be found via "/about" route. #####
+
+	6. Blog it page should be found via "/blog" route. #####
+
+	7. Github star page should be found via "/github" route. #####
+
+
+** Task2
+	The second part tests your logic skill and how familiar you are with the Tech Stack we endorse.
+	Test your proficiency in working with REST API and React Frameworks. You'll using the Github api for this task.
+
+	8. Via the "/github" route. Implement the following:- #####
+		a) - List the most starred Github repos that were created in the last 30 days.
+		b) - Show the result as a list. One repository per row.
+		c) - Show the Following fields in your display:- 
+			i) - Repository name.
+			ii) - Repository description.
+			iii) - Number of stars for the repo.
+			iv) - Number of issues for the repo. 
+			v) - Username and avatar of the repo owner.
+		d) - Implement data pagination with infinite scroll.(optional).
+
+
+
+@. Ask, what are all the posiible causes of the problems.
+
+
+
+
+
+@. What are all the possible solutions.
+
+	* USE jsx and CSS; #####
+
+	1. Create a github repo with the name "Paddle-frontend-assessment". (done)
+
+	2. Create the 4 routes for the application. ["/comingsoon", "/about", "/blog","/github"]. (done)
+		a) - Make sure to redirect from="/" to="/comingsoon" (done)
+
+	3. How to get the data from Github
+		a) - To get the most starred Github repos created in the last 30 days (relative to 2021-09-13), you'll need to call the following endpoint: https://api.github.com/search/repositories?				q=created:>2021-08-13&sort=stars&order=desc
+
+		b) - The JSON data from Github will be paginated (you'll receive around 100 repos per JSON page).
+
+		c) - To get the 2nd page, you add &page=2 to the end of your API request.
+
+	4. Add README.md; and send the link to repository to the google form link above.
+
+
+
+@. Make quick decisions - any decision is better than none.
+
+	^  Initiate git on this project.
+	1. I will start with creating the repo. (done)
+	2. I will create all 4 routes and their respective pages. (done)
+	3. I will inspect the adobe prototype for the following:- 
+		a) - get the expected color scheme. (done)
+		b) - get the total number of components - size, shape, inner & outer padding, margin and other styling properties.
+		c) - list all components with their respective names.
+		d) - using Whatfont plugin inspect and get the expected text fonts. Add the following fonts link to index.html to get the expected font icons. (done)
+			i) - "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap" 
+	4. I will check for onClick and onHover actions.
+	$. git commit -m "Create Routes, colorPresets, fonts, MainLayout, Page component and pages"
+	5. I will assemble all pages.
+	6. I will research on React effects and animations.
+
+
+# Organizing CSS Rules
+	1. Get all colors; and store them namely in an order of importance in JS object data type/hash tree.
+	2. Get all font sizes; and store them namely in an order of importance in JS object data type/hash tree.
+	4. Get all blur effects; and store them namely in an order of importance in JS object data type/hash tree.
+	5. Since all pages and components the font-family 
+	$. git commit -m "Create CSS Rules"
+
+
+# Developing components
+	1. Create Buttons, Bubbles, Header and Footer components.
+	$. git commit -m "Create Buttons, Bubbles, Header & Footer components"
+	
+	2. Create ContactForm, SearchItem and EmailMe components.
+	$. git commit -m "Create ContactForm, SearchItem  and EmailMe components"
+	
+	3. Create the ContactUs, PageTitle and TextSnippet components.
+		a) - Create a small and large PageTitle component (small for blog & large for other pages).
+		b) - Remove blur effect from ContactUs and PageTitle only, for smaller screens.
+	$. git commit -m "Create ContactUs, PageTitle and TextSnippet components"
+	
+	4. Create the ArticleSnippet and BlogSnippet components.
+	$. git commit -m "Create ArticleSnippet and BlogSnippet components"
+
+	5. Create CommentForm, Appreciation and ShareMedia components.
+	$. git commit -m "Create CommentForm, Appreciation and ShareMedia components"
+	
+	6. Create the RepoSummary component.
+	$. git commit -m "Create RepoSummary component"
+
+
+# Developing pages
+	1. Coming Soon
+	$. git commit -m "Create ComingSoon page"
+
+	2. Blog It
+	$. git commit -m "Create Blog page"
+
+	3. About Us
+	$. git commit -m "Create About page"
+
+	3. Trending Repos
+	$. git commit -m "Create TrendingRepos page"
+
+
+@. Assign responsibilty for carrying out the decisions - who is going to do what and when and to what standard.
+- I will take responsibilty for everything.
+
+
+
+
+
+@. Set a schedule of reporting and a standard to measure whether or not the decision was successful.
+
+
+
+@. Outline each instructions you come across in details. That will be your guide/boundary (Try not to do more than you're asked to)
+
+# Guides
+
+N/B: 
+- Put more focus on code quality and less on speed and number of features implemented.
+- Your code will be evaluated based on: code structure, programming best practices, legibility (and not number of features implemented or speed).
+- Your git commit history (and git commit messages) will be also evaluated.
+- Your file and folder structure.
+- Your ability to write clean maintainable code.
+- The responsiveness of your landing page.
+- Use any styling condition.
+
+
+
+@. Task yourself to implement the solutions.
