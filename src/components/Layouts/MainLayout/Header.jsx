@@ -1,20 +1,45 @@
-import PropTypes from 'prop-types';
-import { withStyles } from '@mui/styles';
+import React from 'react';
+import {
+  Nav,
+  NavLink,
+  Bars,
+  NavMenu,
+  NavBtn,
+  NavBtnLink
+} from '../Navbar/NavbarElements';
+import { headersData } from '../Navbar/data';
+import Logo from '../MainLayout/Logo';
 
-const styles = {
-    root: {
-        background: 'red',
-    },
+const NavItems = () => (
+    <NavBtn>
+     {
+       headersData.map(({label, href}) => (
+          label === 'Contact Us' 
+          ? <NavBtnLink key={label} to={href}>{label}</NavBtnLink>
+          :
+          <NavMenu key={label}>
+            <NavLink to={href} activestyle="true">
+              {label}
+            </NavLink>
+          </NavMenu>
+      ))
+     }
+     
+    </NavBtn>
+)
+
+const Header = () => {
+  return (
+    <header>
+      <Nav>
+        <NavLink to='/'>
+          <Logo />
+        </NavLink>
+        <Bars />
+        <NavItems />
+      </Nav>
+    </header>
+  );
 };
 
-const Header = (props) => {
-    const { classes } = props;
-
-    return <header className={classes.root}>Header</header>;
-};
-
-Header.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(Header);
+export default Header;
