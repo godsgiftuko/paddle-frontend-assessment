@@ -3,7 +3,6 @@ import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { CardActions, CardContent, CardMedia, Button, Typography, Card } from '@mui/material';
 import { NavMenu, NavLink } from '../../Layouts/NavbarElements';
-import { _posts } from '../../../mocks';
 
 const PostLink = styled(Link)`
   --pad: 100px;
@@ -34,24 +33,32 @@ const PostLink = styled(Link)`
   }
 `;
 
-export default function Post() {
+export default function Post({ data }) {
   return (
-    _posts.map(({ feature, title, text, image, link }, index) => (
-       <Card sx={{ maxWidth: 'auto'}} key={index}>
-          <CardMedia
+    data.map(({ feature, title, text, link, ...rest }, index) => (
+       <Card 
+          sx={{ maxWidth: 'auto', boxShadow:  '0px 0px 30px #00000038'}}
+          key={index}
+        >
+          {
+          rest?.image &&
+          <CardContent>
+            <CardMedia
             component="img"
             height="300"
-            image={image}
+            image={rest.image}
             alt={title} />
+            </CardContent>
+          }
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div" my={2} sx={{ fontWeight: 600, lineHeight: '1.50em', textTransform: 'capitalize' }}>
+            <Typography gutterBottom variant="h5" component="div"  mt={1} sx={{ fontWeight: 600, lineHeight: '1.30em', textTransform: 'capitalize' }}>
               {title}
             </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ lineHeight: '2.09em' }}>
+            <Typography variant="body2" color="text.secondary" sx={{ lineHeight: '2.01em' }}>
               {text}
             </Typography>
           </CardContent>
-          <CardActions sx={{ padding: '20px 16px' }}>
+          <CardActions sx={{ padding: '0px 16px 30px 16px' }}>
             <NavMenu show>
               <PostLink color="black" to="/">READ MORE</PostLink>
             </NavMenu>
