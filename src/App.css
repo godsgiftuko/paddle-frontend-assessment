@@ -1,9 +1,49 @@
+:root {
+	--white: #FFFFFF;
+    --shadedWhite: #F6F7F9;
+    --shadedWhite2: #FAFAFA;
+	--black: #000000;
+    --dark: #0C0123;
+	--pink: #FF00F7;
+	--purple: #7C0FD5;
+	--shadedPurple: #7F1E7B;
+    --blue: #271AC1;
+    --tintedBlue: #213F72;
+    --shadedBlue: #19073B;
+    --shadedBlue2: #1C0C28;
+    --shadedBlue3: #210045;
+    --brown: #7F4129;
+    --gray: #707070;
+    --gray1: #09090991;
+    --grey: #00000012;
+
+    --normal: normal;
+    --medium: medium;
+    --semibold: 600;
+    --bold: bold;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif !important;
+}
+
+a {
+	text-decoration: none;
+}
 
 body {
 	background-color: #f6f7f9;
-	font-family: 'Poppins', sans-serif;
 }
 
-input::placeholder {
+input::placeholder { 
   font-size: 14px;
+}
+
+
+.fadedWhite {
+	color: #FFFFFF;
+	opacity: 70%;
 }
