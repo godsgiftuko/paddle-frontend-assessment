@@ -11,8 +11,8 @@ import {
   Footer,
   FooterList,
   FooterListItem
-} from '../Navbar/NavbarElements';
-import { footersData } from '../Navbar/data';
+} from '../NavbarElements';
+import { footersData } from '../data';
 import Logo from '../MainLayout/Logo';
 import { Icon } from '../../Fonts';
 

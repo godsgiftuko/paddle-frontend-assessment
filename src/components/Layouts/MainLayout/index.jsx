@@ -1,9 +1,11 @@
+import Header from './Header';
+import Footer from './Footer';
 export default function MainLayout({ children }) {
 	return (
 		<>
-			<header>Header</header>
+			<Header />
 				{children}
-			<footer>footer</footer>
+			<Footer />
 		</>
 	);
 }

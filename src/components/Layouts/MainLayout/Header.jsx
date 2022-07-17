@@ -6,8 +6,8 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink
-} from '../Navbar/NavbarElements';
-import { headersData } from '../Navbar/data';
+} from '../NavbarElements';
+import { headersData } from '../data';
 import Logo from '../MainLayout/Logo';
 
 const NavItems = () => (

@@ -13,7 +13,7 @@ import { PageTitle, KnowMoreSnippet } from '../Layouts/Elements';
 const Page = forwardRef(({ children, parsePageTitle={}, parseKnowMoreSnippet={}, title = '', meta, ...other }, ref) => (
   <>
     <Helmet>
-      <title>{`${title} | ${companyName}`}</title>
+      <title>{`${title} | ${companyName}`}</title> 
       {meta}
     </Helmet>
 
