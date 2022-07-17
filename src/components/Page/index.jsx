@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet-async';
 import { forwardRef } from 'react';
+import styled from 'styled-components';
+
 // @mui
 import { Box, Container, Grid, Stack } from '@mui/material';
 // config
@@ -10,14 +12,18 @@ import { colorPalette } from '../../theme';
 // 
 import { PageTitle, KnowMoreSnippet } from '../Layouts/Elements';
 
-const Page = forwardRef(({ children, parsePageTitle={}, parseKnowMoreSnippet={}, title = '', meta, ...other }, ref) => (
+const Main = styled(Box)`
+  background: {$prop => prop.background && red || green};
+`;
+
+const Page = forwardRef(({ children, parsePageTitle={}, parseKnowMoreSnippet={}, background="false", title = '', meta, ...other }, ref) => (
   <>
     <Helmet>
       <title>{`${title} | ${companyName}`}</title> 
       {meta}
     </Helmet>
 
-    <Box sx={{ background: colorPalette.pageBackground }} component="main" pt={5} ref={ref} {...other}>
+    <Main background={background} component="main" pt={5} ref={ref} {...other}>
         {
           parsePageTitle && <PageTitle data={parsePageTitle} /> || ''
         }
@@ -27,7 +33,7 @@ const Page = forwardRef(({ children, parsePageTitle={}, parseKnowMoreSnippet={},
       {
         parseKnowMoreSnippet && <KnowMoreSnippet data={parseKnowMoreSnippet} /> || ''
       }
-    </Box>
+    </Main>
   </>
 ));
 

@@ -80,7 +80,6 @@ const Title = styled(Typography)`
 
 
 export default function PageTitle({ data }) {
-  console.log(data)
   return (
       <Div container item   width="100%" xs={12} md={12} spacing={3} p={3} my={3} ml={0} >
         <Stack sx={{ color: 'white', display: { xs: 'none', sm: 'none' } }}>

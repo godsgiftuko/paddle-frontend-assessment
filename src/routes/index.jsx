@@ -1,6 +1,10 @@
 import { lazy } from 'react';
 import { useRoutes, Navigate, Routes, Route } from 'react-router-dom';
 import MainLayout from '../components/Layouts/MainLayout';
+import ComingSoon from '../pages/ComingSoon';
+import Blog from '../pages/Blog';
+import About from '../pages/About';
+import TrendingRepos from '../pages/TrendingRepos';
 
 
 export default function Routes_() {
@@ -17,8 +21,3 @@ export default function Routes_() {
 
     return routes;
 }
-
-const ComingSoon = lazy(() => import('../pages/ComingSoon'));
-const About = lazy(() => import('../pages/About'));
-const Blog = lazy(() => import('../pages/Blog'));
-const TrendingRepos = lazy(() => import('../pages/TrendingRepos'));
