@@ -45,6 +45,12 @@ input::placeholder {
   font-size: 14px;
 }
 
+input[type=text] {
+    color: var(--black);
+    font-size: 18px;
+    font-weight: normal;
+}
+
 
 .fadedWhite {
 	color: #FFFFFF;

@@ -15,6 +15,7 @@ export const Button = styled.button`
   font-weight: calc(var(--semibold) + 100);
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  ${prop => prop }
 
 `;
 

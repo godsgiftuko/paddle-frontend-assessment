@@ -13,21 +13,20 @@ const Div = styled(Box)`
 	flex-direction: column;
 `;
 
-const RoundedInputField = styled.input.attrs({ 
-	  type: 'text',
-	})`
-  border-radius: 51px;
-  padding: 15px 22px;
-  fontSize: 30px;
-  color: #000000;
-  outline: none;
-  border: none;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
+const RoundedInputField = styled(Input)`
+	padding: 15px 20px;
+	  fontSize: 30px;
+	  color: #000000;
+	  outline: none;
+	  border-radius: var(--sub-comp-radius);
+	  border: none;
+	  transition: all 0.2s ease-in-out;
+	  text-decoration: none;
+		flex: 4;
 
-  @media screen and (max-width: 768px) {
-  	margin: 0 0 20px;
-   }
+	  @media screen and (max-width: 425px) {
+	  	margin: 0 0 30px;
+	   }
 `;
 
 const InputDiv = styled(Box)`
@@ -51,9 +50,16 @@ const CustomInput = styled(Input)`
 `;
 
 const SubscriberComponent = styled(Stack)`
+	--sub-comp-pad: 15px;
+	--sub-comp-radius: 51px;
+	// margin: 0 20px;
 	
-	@media screen and (min-width: 425px) {
-		margin: 0 20px;
+	@media screen and (min-width: 768px) {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row !important; 
+	  	border-radius: var(--sub-comp-radius);
+	  	background: var(--white);
 	}
 `;
 
@@ -64,7 +70,7 @@ export default function Subscribe() {
 		      component="form"
 		      noValidate
 	    >	
-				<Stack display="flex" py={5} justifyContent="center" alignItems={{ xs: "flex-start", sm: "center"}} direction={{ xs: "column", sm: "row"}}>
+				<Stack display="flex" py={{ sm: 5 }} justifyContent="center" alignItems={{ xs: "flex-start", sm: "center"}} direction={{ xs: "column", sm: "row"}}>
 					<CustomInput
 					  placeholder="firstName"
 					  inputProps={{
@@ -74,11 +80,8 @@ export default function Subscribe() {
 	    		</Stack>
 
 		    	<SubscriberComponent>
-			    	<RoundedInputField  variant="outlined"
-					    inputProps={{
-					      style: { textAlign: 'center', fontSize: size.medium22, color: colorPalette.black },
-					    }}/>
-				  	<Button variant="contained" background="blue" padding="15px 0" sx={{ fontSize: size.small16, width: '50%' }}>JOIN OUR WAITING LIST</Button>
+			    	<RoundedInputField placeholder="Enter your email address..."  variant="outlined"/>
+				  	<Button variant="contained" background="blue" flexGrow="1" padding="15px 0">JOIN OUR WAITING LIST</Button>
 		    	</SubscriberComponent>
 	    </Div>
 	);
