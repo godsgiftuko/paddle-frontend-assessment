@@ -1,5 +1,6 @@
 import { Typography, Box, Grid, Stack, Container } from '@mui/material';
 import styled from 'styled-components';
+import { breakParagraph } from './breakParagraph';
 
 const Div = styled(Grid)`
     background: transparent linear-gradient(180deg, var(--shadedBlue3) 0%, var(--dark) 100%) 0% 0% no-repeat padding-box;
@@ -99,6 +100,7 @@ const Title = styled(Typography)`
 
 export default function PageTitle({ data, scale }) {
   const isLarge = scale == 'large';
+  const symbol = '%';
   return (
       <Div container item width="100%" scale={scale} xs={12} md={12} mt={0} spacing={3} p={3} mb={3} ml={0} >
         <Stack
@@ -114,10 +116,15 @@ export default function PageTitle({ data, scale }) {
         >
           <Content item xs={12} lg={12} md={6}>
             <Title variant="body1" sx={{ textTransform: 'uppercase', color: '#FFF' }}>
-              {data?.title}
+              { data?.title }
             </Title>
             <Typography variant="h5" color="text.secondary" mt={2} sx={{ color: '#FFF', fontSize: { md: '50x', lg: '69px', sm: '37px', xs: '35px' } }}> 
-              {data?.subtitle}
+            {
+              data?.subtitle
+                ? data.subtitle.includes(symbol) && breakParagraph(data.subtitle, symbol) || data.subtitle
+                : data.subtitle
+            }
+              
             </Typography>
             <Typography mt={2} sx={{ display: { xs: 'block', md: 'none' }}}>
   Our tools are easy to set up and use with a user friendly dashboard that enables you to set up, launch, automate and manage multi-affiliate campaigns in 5 minutes.
