@@ -4,15 +4,15 @@ import { Grid, Container } from '@mui/material';
 // components
 import Page from '../components/Page';
 // sections
-import { Subscriber, CountDownTimer, WelcomeWidget } from '../components/sections/comingsoon';
+import { SubscriberWidget, CountDownTimer, WelcomeWidget } from '../components/sections/comingsoon';
 
-              // <Subscriber/>
-              // <CountDownTimer />
+              // <SubscriberWidget/>
 export default function ComingSoon() {
     return (
-      <Page title="Coming Soon">
-          <Container>
+      <Page title="Coming Soon" background>
+          <Container sx={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             <WelcomeWidget/>
+              <CountDownTimer />
           </Container>
     	</Page>
     );

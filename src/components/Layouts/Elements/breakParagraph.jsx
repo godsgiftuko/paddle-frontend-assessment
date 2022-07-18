@@ -1,3 +1,4 @@
+import { convertStringToHTML } from '../../../utils';
 export const breakParagraph = (str, symbol) => {
     const symbolPos = str.includes(symbol) && str.indexOf(symbol);
     const strLength = str.length;

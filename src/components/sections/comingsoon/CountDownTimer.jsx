@@ -4,24 +4,11 @@ import { Button } from '../../LayoutElements';
 
 const InputDiv = styled(Box)`
   @media screen and (min-width: 768px) {
-	width: 40%;
+	
   border-radius: 51px;
 	background: #FFF;
 	borderRadius: 51px;
 
-    }
-`;
-
-const Clip = styled(Stack)`
-	background: #FFF;
-	fontSize: 30px;
-	color: #000000;
-	border-radius: 15px;
-	height: 150px;
-	width: 140px;
-	@media screen and (max-width: 768px) {
-	  	height: 100px;
-	  	background: none;
     }
 `;
 
@@ -33,25 +20,33 @@ const MomentList = styled(Stack)`
 `;
 
 const Moment = styled('div')`
-		color: #000000;
+		color: var(--black);
 		textTransform: capitalize;
 	  	flex-direction: column;
 	  	justify-content: center;
 	  	align-items: center;
+  		background: var(--white);
 	  	display: flex;
-	  	padding: 0 10px;
 	  	border-radius: 10px;
+  		padding: 0 5px;
+  		background: transparent;
+	  	@media screen and (min-width: 425px) {
+	  		height: 90px;
+	  		width: 90px;
+		  	background: var(--white);
+	  	}
 		@media screen and (min-width: 768px) {
-		  	background: #FFF;
-		  	// height: 100px;
+		  	background: var(--white);
+		  	height: 100px;
+		  	width: 100px;
+			padding: 38px !important;
 	    }
 `;
 
 const MomentItem = styled('span')`
-	color: #000000;
+	color: var(--black);
 	display: block;
 	text-transform: capitalize;
-	font-size: 18px;
 	text-align: center;
 	flex-basis: min-content;
 
@@ -59,20 +54,25 @@ const MomentItem = styled('span')`
 		font-weight: bold;
 	}
 
-	@media screen and (max-width: 768px) {
+ 	@media screen and (max-width: 375px) {
+		color: var(--white);	
+  		font-size: 30px;	
+  		&:nth-child(2) {
+			font-size: 16px !important;
+		}	
+ 	}
+
+	@media screen and (min-width: 768px) {
+		font-size: 40px;
 		&:nth-child(2) {
-			// font-size: 18px;
-			color: red;
+			font-size: 18px !important;
 		}
-		// font-size: 20px;
-	  	height: 50px;
-	  	width: 2em;
 	  	background: none;
     }
 `;
 
 
-const ClipList = () => (
+const Timer = () => (
 	
 	<MomentList spacing={1} direction="row">
 		<Moment>
@@ -80,28 +80,29 @@ const ClipList = () => (
 	    	<MomentItem>days</MomentItem>
 	    </Moment>
 	    <Moment>
-	    	<MomentItem>7</MomentItem>
-	    	<MomentItem>days</MomentItem>
+	    	<MomentItem>24</MomentItem>
+	    	<MomentItem>hours</MomentItem>
 	    </Moment>
 	    <Moment>
-	    	<MomentItem>7</MomentItem>
-	    	<MomentItem>days</MomentItem>
+	    	<MomentItem>54</MomentItem>
+	    	<MomentItem>minutes</MomentItem>
 	    </Moment>
 	    <Moment>
-	    	<MomentItem>7</MomentItem>
-	    	<MomentItem>days</MomentItem>
+	    	<MomentItem>11</MomentItem>
+	    	<MomentItem>seconds</MomentItem>
 	    </Moment>
 	</MomentList>
 );
 
 
-export default function Subscribe() {
+export default function CountDownTimer() {
 	return (
 		<Box
 		      component="div"
 		      sx={{
-		        '& .MuiTextField-root': { m: 1, width: '25ch' },
+		        width: "100%"
 		      }}
+		      my={5}
 		      noValidate
 		      autoComplete="off"
 		      display="flex"
@@ -111,7 +112,7 @@ export default function Subscribe() {
 		      flexDirection="column"
 	    >	
 	    
-	    	<ClipList />
+	    	<Timer />
 	    </Box>
 	);
 }
