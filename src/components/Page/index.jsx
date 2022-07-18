@@ -13,19 +13,19 @@ import { colorPalette } from '../../theme';
 import { PageTitle, KnowMoreSnippet } from '../Layouts/Elements';
 
 const Main = styled(Box)`
-  background: {$prop => prop.background && red || green};
+  // background: {$prop => prop.background && red || green};
 `;
 
-const Page = forwardRef(({ children, parsePageTitle={}, parseKnowMoreSnippet={}, background="false", title = '', meta, ...other }, ref) => (
+const Page = forwardRef(({ children, parsePageTitle={}, parseKnowMoreSnippet={}, useGradientBackground='shadedWhite2', title = '', scale='normal', meta, ...other }, ref) => (
   <>
     <Helmet>
       <title>{`${title} | ${companyName}`}</title> 
       {meta}
     </Helmet>
 
-    <Main background={background} component="main" pt={5} ref={ref} {...other}>
+    <Main background={useGradientBackground} component="main" ref={ref} {...other}>
         {
-          parsePageTitle && <PageTitle data={parsePageTitle} /> || ''
+          parsePageTitle && <PageTitle data={parsePageTitle} scale={scale} /> || ''
         }
       <Container maxWidth="xl">
         {children}

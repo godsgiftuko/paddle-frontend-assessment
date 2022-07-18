@@ -17,19 +17,21 @@ const Div = styled(Grid)`
      display: none;
     }
 
+    height: ${prop => prop.scale === 'large' ? "calc(100vh - 100px)" : '300px' };
 
     @media screen and (min-width: 768px) {
-      height: 300px;
 
       &::before {
         position: absolute;
         content: '';
-        left: 200px;
+        left: 20%;
         top: 23%;
         height: 70%;
-        width: 130px;
+        width: 200px;
         display: block;
-        background: var(--white);
+        -webkit-filter: blur(var(--blur));
+        filter: blur(var(--blur));
+        background: transparent linear-gradient(180deg, var(--pink) 0%, var(--shadedBlue) 120%) 0% 0% no-repeat padding-box;
       }
 
       &::after {
@@ -38,10 +40,10 @@ const Div = styled(Grid)`
           top: 0;
           left: 0;
           height: 100%;
-          width: 25em;
+          width: ${prop => prop.scale === 'large' ? '50%': '40em'};
           display: block;
-          background: transparent linear-gradient(180deg, #213F72 0%, #19073B 100%) 0% 0% no-repeat padding-box;
-          opacity: 0.8;
+          background: transparent linear-gradient(180deg, var(--tintedBlue) 0%, var(--shadedBlue) 100%) 0% 0% no-repeat padding-box;
+          opacity: var(--blur-opcacity);
           backdrop-filter: blur(16px);
           -webkit-backdrop-filter: blur(16px);
       }
@@ -60,31 +62,45 @@ const Content = styled(Grid)`
   height: 150px;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column !important;
+  alignt-items: center;
+  justify-content: center;
 `;
 
 const Title = styled(Typography)`
   position: relative;
 
- @media screen and (min-width: 768px) {
+  &::before {
+      position: absolute;
+      content: '';
+      left: -40px;
+      top: 50%;
+      height: 1px;
+      width: 30px;
+      background: var(--white);
+    }
+
+ @media screen and (max-width: 425px) {
+    margin-left: 45px !important;
     &::before {
       position: absolute;
       content: '';
-      left: -60px;
+      left: -40px;
       top: 50%;
       height: 1px;
-      width: 50px;
+      width: 30px;
       background: var(--white);
     }
   }
+
 `;
 
 
-export default function PageTitle({ data }) {
+export default function PageTitle({ data, scale }) {
+  const isLarge = scale == 'large';
   return (
-      <Div container item   width="100%" xs={12} md={12} spacing={3} p={3} my={3} ml={0} >
-        <Stack sx={{ color: 'white', display: { xs: 'none', sm: 'none' } }}>
-        jdkd
-        </Stack>
+      <Div container item width="100%" scale={scale} xs={12} md={12} mt={0} spacing={3} p={3} mb={3} ml={0} >
         <Stack
           className="css-1fnsymr-MuiContainer-root"
           sx={{
@@ -93,17 +109,28 @@ export default function PageTitle({ data }) {
             width: '100%',
             justifyContent: 'center',
             aligntItems: { sm: "center", lg: "flex-start" },
-            paddingLeft: { sm: '60px', md: '300px' }
+            paddingLeft: { sm: '60px', lg: '300px'  }
           }}
         >
-          <Content item xs={12} sm={6}>
-            <Title variant="body1" sx={{ textTransform: 'capitalize', color: '#FFF' }}>
+          <Content item xs={12} lg={12} md={6}>
+            <Title variant="body1" sx={{ textTransform: 'uppercase', color: '#FFF' }}>
               {data?.title}
             </Title>
-            <Typography variant="h5" color="text.secondary" mt={2} sx={{ color: '#FFF', fontSize: { md: '50x', sm: '35px' } }}>
+            <Typography variant="h5" color="text.secondary" mt={2} sx={{ color: '#FFF', fontSize: { md: '50x', lg: '69px', sm: '37px', xs: '35px' } }}> 
               {data?.subtitle}
             </Typography>
+            <Typography mt={2} sx={{ display: { xs: 'block', md: 'none' }}}>
+  Our tools are easy to set up and use with a user friendly dashboard that enables you to set up, launch, automate and manage multi-affiliate campaigns in 5 minutes.
+              </Typography>
           </Content>
+          {
+            isLarge && 
+            <Stack sx={{ display: { xs: 'none', md: 'block' }, width: { xs: '100%', sm: '500px' } ,position: { sm: 'absolute', xs: 'relative', zIndex: '2' }, bottom: '10%', right: { xs: '0', sm: '10%' }, }}>
+              <Typography lineHeight="1.90em">
+  Our tools are easy to set up and use with a user friendly dashboard that enables you to set up, launch, automate and manage multi-affiliate campaigns in 5 minutes.
+              </Typography>
+            </Stack>
+          }
         </Stack>
     </Div>
   );

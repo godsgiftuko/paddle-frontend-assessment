@@ -21,6 +21,9 @@
     --medium: medium;
     --semibold: 600;
     --bold: bold;
+
+    --blur: 10px;
+    --blur-opcacity: 0.4;
 }
 
 * {

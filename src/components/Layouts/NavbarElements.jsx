@@ -8,7 +8,7 @@ const { size, weight } = typography;
 
 export const Nav = styled.nav`
   background: #000;
-  height: 80px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1689px) / 2);
