@@ -22,14 +22,12 @@ const parseKnowMoreSnippet = {
   subtitle: 'learn who we are and what drives us.'
 }
 
-
-            // <Posts />
-            // <Articles />
-
 export default function Blog() {
     return (
       <Page title="Blog It" parseKnowMoreSnippet={parseKnowMoreSnippet} parsePageTitle={parsePageTitle}>
           <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Posts />
+            <Articles />
           </Grid>
     	</Page>
     );
