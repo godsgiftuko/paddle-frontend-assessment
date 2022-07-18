@@ -1,9 +1,6 @@
 import { TextField, Box, Stack, Grid, FormControl, Typography } from '@mui/material';
 import styled from 'styled-components';
 import { Button } from '../../LayoutElements';
-import { typography, colorPalette } from '../../../theme';
-
-const { size, weight } = typography;
 
 const InputDiv = styled(Box)`
   @media screen and (min-width: 768px) {

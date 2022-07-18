@@ -4,21 +4,16 @@ import { Grid, Container } from '@mui/material';
 // components
 import Page from '../components/Page';
 // sections
-import { Subscriber } from '../components/sections/comingsoon';
+import { Subscriber, CountDownTimer, WelcomeWidget } from '../components/sections/comingsoon';
 
-const RootStyle = styled('div')(({ theme }) => ({
-  paddingTop: theme.spacing(8),
-  [theme.breakpoints.up('md')]: {
-    paddingTop: theme.spacing(11),
-  },
-}));
-
+              // <Subscriber/>
+              // <CountDownTimer />
 export default function ComingSoon() {
     return (
-    	<Page title="Coming Soon">
-	        <div className="container">
-              <Subscriber/>
-	        </div>
+      <Page title="Coming Soon">
+          <Container>
+            <WelcomeWidget/>
+          </Container>
     	</Page>
     );
 }

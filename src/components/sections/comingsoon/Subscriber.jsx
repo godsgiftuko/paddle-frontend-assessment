@@ -1,10 +1,6 @@
 import { TextField, Box, Stack, FormControl, Input } from '@mui/material';
-import { withStyles } from '@mui/material';
 import styled from 'styled-components';
 import { Button } from '../../LayoutElements';
-import { typography, colorPalette } from '../../../theme';
-
-const { size, weight } = typography;
 
 const Div = styled(Box)`
 	displayL flex;
