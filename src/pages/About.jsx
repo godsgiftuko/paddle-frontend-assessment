@@ -23,10 +23,10 @@ const parseKnowMoreSnippet = {
 }
 
 const Message = () => (
-    <Typography py={{ lg: 15, xs: 4 }} fontSize={{ md: '48px', xs: '30px' }}>
+    <Typography py={{ lg: 15, xs: 4 }} fontSize={{ md: '48px', xs: '30px' }} color="#FFF">
       Metricks was developed because just like you, we needed a product that could give us <b>good value.</b>
     </Typography>
-  )
+)
 
 
 export default function About() {

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Title = styled(Typography)`
 	--pad-para-title: 100px;
-	color: var(--black);
+	color: var(--white);
 	font-size: 22px;
 	padding-left: var(--pad-para-title);
 	position: relative;
@@ -18,8 +18,8 @@ const Title = styled(Typography)`
 		width: 80px;
 		top: 50%;
 		transform: translate(-120%, 0%);
-		color: var(--black);
-		background: var(--black);
+		color: var(--white);
+		background: var(--white);
 	}
 
 	&::after {
@@ -29,14 +29,14 @@ const Title = styled(Typography)`
 		font-size: 16px;
 		font-weight: 300;
 		transform: translate(100%, -40%);
-		color: var(--black);	
+		color: var(--white);	
 	}
 `;
 
 export default function Paragraph() {
 	return (
 		<Grid container spacing={4} py={3}>
-			<Grid item xs={12} sm={6}>
+			<Grid item xs={12} sm={6} color="#FFF">
 				<Title subtitle="01" variant="h6">why us?</Title>
 				<Typography component="p" py={3} lineHeight="2.11em">
 				We pride ourselves in our ability to innovate and create world-class tools that provide reliable and efficient touchpoints between advertisers and affiliates.
@@ -45,7 +45,7 @@ export default function Paragraph() {
 				03
 				</Box>
 			</Grid>
-			<Grid item xs={12} sm={6}>
+			<Grid item xs={12} sm={6} color="#FFF">
 				<Title subtitle="01" variant="h6">Growing with you</Title>
 				<Typography component="p" py={3} lineHeight="2.11em">
 				Leveraging the best technology, we have developed an all-in-one affiliate marketing tracking software, a genius tool to help you track, automate and optimize your influencer campaigns, all from one dashboard.
