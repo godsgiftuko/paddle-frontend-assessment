@@ -16,14 +16,14 @@ import { footersData } from '../data';
 import Logo from '../MainLayout/Logo';
 import { Icon } from '../../Fonts';
 
-const NavItems = () => (
+const SocialLinks = () => (
     <>
      {
        footersData.map(({label, icon, href}) => (
           label === 'Contact Us' 
           ? <NavBtnLink key={label} to={href}>{label}</NavBtnLink>
           :
-          <NavMenu key={label}>
+          <NavMenu padding key={label}>
             <NavLink to={href} activestyle="true">
               <NavIcon icon={icon} />
             </NavLink>
@@ -38,13 +38,13 @@ const Footer_ = () => {
   return (
     <Footer>
       <Nav>
-        <NavItems />
+        <SocialLinks />
       </Nav>
       <FooterList>
       	<FooterListItem to="/">Terms of services</FooterListItem>
       	<FooterListItem to="/">Privacy policy</FooterListItem>
       </FooterList>
-        <span className="fadedWhite" style={{ marginTop: 20 }}>Copyright 2021 @ Peddle Technologies. All Right Reserved.</span>
+        <span className="fadedWhite" style={{ marginTop: 5, opacity: 0.5 }}>Copyright 2021 @Peddle Technologies. All Right Reserved.</span>
     </Footer>
   );
 };

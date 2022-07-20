@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Div = styled(Box)`
     background: transparent linear-gradient(180deg, var(--tintedBlue) 0%, var(--shadedBlue) 100%) 0% 0% no-repeat padding-box;
     color: var(--white);
-     height: 150px;
+     // height: 150px;
     position: relative;
 
     @media screen and (min-width: 768px) {

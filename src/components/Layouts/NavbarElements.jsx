@@ -51,25 +51,25 @@ export const NavIcon = styled(Icon)`
   display: block;
   color: #fff;
   font-size: 22px;
+  cursor: pointer;
   opacity: 70%;
     &:hover {
       opacity: 100%;
     }
 
-    @media screen and (max-width: 768px) {
-      position: absolute;
-      top: 0;
-      right: 0;
-      transform: translate(-100%, 75%);
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
+    // @media screen and (max-width: 768px) {
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   transform: translate(-100%, 75%);
+    //   font-size: 1.8rem;
+    // }
 `;
 
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -24px;
+  margin: 0 24px;
 
   /* Second Nav */
   /* margin-right: 24px; */
@@ -132,6 +132,7 @@ export const FooterList = styled.ul`
   justify-content: center;
   text-decoration: none;
   column-gap: 75px;
+  padding: 0 0 15px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     justify-content: flex-start;
@@ -140,12 +141,15 @@ export const FooterList = styled.ul`
 
 export const FooterListItem = styled(Link)`
   display: flex;
-  font-size: size.small18;
   color: #ffff;
   // margin: 0 20px;
   opacity: 70%;
+  font-size: size.small18;
   &:hover {
     transition: all 0.2s ease-in-out;
     opacity: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
   }
 `;

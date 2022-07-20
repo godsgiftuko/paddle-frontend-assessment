@@ -40,6 +40,11 @@ const CustomInput = styled(Input)`
 	display: none;
 	padding: 15px 0;
 	
+	&::before, &::after {
+		border-color: var(--white) !important;
+		opacity: 0.23;
+	}
+
 	@media screen and (min-width: 425px) {
 		margin: 0 20px;
 	}
@@ -49,7 +54,7 @@ const SubscriberComponent = styled(Stack)`
 	--sub-comp-pad: 15px;
 	--sub-comp-radius: 51px;
 	// margin: 0 20px;
-	
+
 	@media screen and (min-width: 768px) {
 		display: flex;
 		justify-content: space-between;
@@ -59,6 +64,10 @@ const SubscriberComponent = styled(Stack)`
 	}
 `;
 
+const inputStyle = {
+  style: { color: '#FFF' },
+}
+
 export default function Subscribe() {
 	return (
 		<Div
@@ -67,12 +76,8 @@ export default function Subscribe() {
 		      noValidate
 	    >	
 				<Stack display="flex" py={{ sm: 5 }} justifyContent="center" alignItems={{ xs: "flex-start", sm: "center"}} direction={{ xs: "column", sm: "row"}}>
-					<CustomInput
-					  placeholder="firstName"
-					  inputProps={{
-					      style: { borderBottomColor: 'yellow' },
-					    }}/>
-	    			<CustomInput  placeholder="lastName" />
+					<CustomInput placeholder="firstName" inputProps={inputStyle} />
+	    			<CustomInput  placeholder="lastName" inputProps={inputStyle} />
 	    		</Stack>
 
 		    	<SubscriberComponent>
