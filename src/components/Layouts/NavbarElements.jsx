@@ -1,5 +1,4 @@
 import { Icon } from '@iconify/react';
-import { FaBars } from 'react-icons/fa';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { typography, colorPalette } from '../../theme';
@@ -11,11 +10,8 @@ export const Nav = styled.nav`
   height: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1689px) / 2);
+  padding: 0.5rem 25px;
   z-index: 10;
-
-  /* Third Nav */
-  /* justify-content: flex-start; */
 `;
 
 export const NavLink = styled(Link)`
@@ -23,27 +19,36 @@ export const NavLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: '0 40px';
   height: 100%;
   cursor: pointer;
+  flex-direction: ${prop => prop.direction || null};
+   transition: width 600ms ease;
 
   &.active {
     color: #FF00F7;
   }
-`;
 
-export const Bars = styled(FaBars)`
-  display: none;
-  color: #fff;
+  ${
+    prop =>prop.hasbackground 
+    ? `
+      background: var(--blue);
+      border-radius: 51px;
+      padding: 10px 22px;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+    `
+    : null
+  };
 
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
-    font-size: 1.8rem;
-    cursor: pointer;
+  @media screen and (min-width: 768px) {
+    ${
+      prop => prop.click
+      ? `
+        padding: 30px;
+
+      ` 
+      : null
+    }
   }
 `;
 
@@ -70,15 +75,12 @@ export const NavMenu = styled.div`
   display: flex;
   align-items: center;
   margin: 0 24px;
-
-  /* Second Nav */
-  /* margin-right: 24px; */
-
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
+  font-weight: bold;
 
   @media screen and (max-width: 768px) {
+    margin: 0;
+     padding: 15px 0;
+     font-size: 20px;
     display: {$prop => prop.show && prop.show || none};
   }
 `;
@@ -86,14 +88,26 @@ export const NavMenu = styled.div`
 export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
-  margin-right: 24px;
-
-  /* Third Nav */
-  /* justify-content: flex-end;
-  width: 100vw; */
 
   @media screen and (max-width: 768px) {
     display: none;
+    ${
+      prop => prop.click
+      ?
+        `
+          position: fixed;
+          z-index: 1000;
+          display: flex; 
+          flex-direction: column;
+          height: calc(100% - 100px);
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          background: black;
+          padding: 50px 0;
+        ` 
+      : null
+    }
   }
 `;
 
@@ -106,10 +120,13 @@ export const NavBtnLink = styled(Link)`
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  font-weight: bold;
   text-decoration: none;
 
   /* Second Nav */
-  margin-left: 24px;
+   @media screen and (min-width: 768px) {
+      // margin-left: 24px;
+   }
 `;
 
 export const Footer = styled.footer`

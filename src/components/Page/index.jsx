@@ -16,7 +16,7 @@ const Main = styled(Box)`
   background: ${prop => prop.background &&  "transparent url('svgs/Path1.svg') 0% 0% padding-box" || 'var(--shadedWhite2)'}; 
 `;
 
-const Page = forwardRef(({ children, parsePageTitle, parseKnowMoreSnippet={}, useGradientBackground, title = '', scale='normal', meta, ...other }, ref) => (
+const Page = forwardRef(({ children, parsePageTitle, parseKnowMoreSnippet, useGradientBackground, title = '', scale='normal', meta, ...other }, ref) => (
   <>
     <Helmet>
       <title>{`${title} | ${companyName}`}</title> 

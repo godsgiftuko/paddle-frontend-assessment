@@ -44,7 +44,7 @@ const Footer_ = () => {
       	<FooterListItem to="/">Terms of services</FooterListItem>
       	<FooterListItem to="/">Privacy policy</FooterListItem>
       </FooterList>
-        <span className="fadedWhite" style={{ marginTop: 5, opacity: 0.5 }}>Copyright 2021 @Peddle Technologies. All Right Reserved.</span>
+        <span className="fadedWhite" style={{ fontSize: '14px', marginTop: 5, opacity: 0.5 }}>Copyright 2021 @Peddle Technologies. All Right Reserved.</span>
     </Footer>
   );
 };
