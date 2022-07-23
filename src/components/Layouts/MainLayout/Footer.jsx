@@ -24,7 +24,7 @@ const SocialLinks = () => (
           ? <NavBtnLink key={label} to={href}>{label}</NavBtnLink>
           :
           <NavMenu padding key={label}>
-            <NavLink to={href} activestyle="true">
+            <NavLink postion="footer" to={href} activestyle="true">
               <NavIcon icon={icon} />
             </NavLink>
           </NavMenu>
@@ -37,7 +37,7 @@ const SocialLinks = () => (
 const Footer_ = () => {
   return (
     <Footer>
-      <Nav>
+      <Nav postion="footer">
         <SocialLinks />
       </Nav>
       <FooterList>

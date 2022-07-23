@@ -4,14 +4,26 @@ import styled from 'styled-components';
 import { typography, colorPalette } from '../../theme';
 
 const { size, weight } = typography;
+const footer = 'footer';
 
 export const Nav = styled.nav`
   background: #000;
   height: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 25px;
   z-index: 10;
+
+  ${
+    prop => prop.position == footer
+    ? `
+      padding: 0.5rem 0;
+    `
+    : `padding: 0.5rem 25px;`
+  }
+
+  // @media screen and (max-width: 425px) {
+  //   padding: 0.5rem 25px;
+  // }
 `;
 
 export const NavLink = styled(Link)`
@@ -40,6 +52,20 @@ export const NavLink = styled(Link)`
     : null
   };
 
+   ${
+
+    prop => prop.position == footer
+    ? `
+      padding: 15px 10px;
+      
+      @media screen and (max-width: 425px) {
+        padding: 15px 20px;
+        
+      }
+    `
+    : null
+  }
+
   @media screen and (min-width: 768px) {
     ${
       prop => prop.click
@@ -62,13 +88,6 @@ export const NavIcon = styled(Icon)`
       opacity: 100%;
     }
 
-    // @media screen and (max-width: 768px) {
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    //   transform: translate(-100%, 75%);
-    //   font-size: 1.8rem;
-    // }
 `;
 
 export const NavMenu = styled.div`
@@ -79,9 +98,8 @@ export const NavMenu = styled.div`
 
   @media screen and (max-width: 768px) {
     margin: 0;
-     padding: 15px 0;
+     padding: ${prop => prop.footer == footer ? '15px 0' : '15px'};
      font-size: 20px;
-    display: {$prop => prop.show && prop.show || none};
   }
 `;
 
@@ -150,7 +168,8 @@ export const FooterList = styled.ul`
   text-decoration: none;
   column-gap: 75px;
   padding: 0 0 15px;
-  @media screen and (max-width: 768px) {
+
+  @media screen and (max-width: 425px) {
     flex-direction: column;
     justify-content: flex-start;
   }
@@ -159,7 +178,7 @@ export const FooterList = styled.ul`
 export const FooterListItem = styled(Link)`
   display: flex;
   color: #ffff;
-  // margin: 0 20px;
+  margin: 5px 0;
   opacity: 70%;
   font-size: size.small18;
   &:hover {

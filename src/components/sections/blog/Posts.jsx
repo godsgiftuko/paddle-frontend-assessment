@@ -5,7 +5,7 @@ import { _posts } from '../../../mocks';
 
 export default function Posts(){
 	return (
-		<PostsGrid title="lastest from the blog" subTitle="Quickly manage the layout, alignment, and sizing of grid columns, navigation, components, and more with a full suite of responsive grid utilities.">
+		<PostsGrid title="lastest from the blog" subTitle="As technology continues to become increasingly important in our lives, it’s beneficial to keep up with the latest news and trends.">
               <Post data={_posts} />
         </PostsGrid>
 	);

@@ -68,7 +68,7 @@ export default function KnowMoreSnippet({ data }) {
               </NavMenu>
           </Grid>
           <Grid item xs={12} md={6} display={{ xs: "none", md: "block" }} py={3}>
-            2
+            
           </Grid>
         </Grid>
       </Container>

@@ -38,17 +38,18 @@ export const NavItems = () => {
   return (
     <>
       <NavBtn click={click}>
-       {
-         headersData.map(({label, href}) => (
-            <NavMenu key={label}>
-              <NavLink hasbackground={label === 'Contact Us' && 'blue' || null} to={href} activestyle="true">
-                {label}
-              </NavLink>
-            </NavMenu>
-        ))
-       }
-      </NavBtn>
+         {
+           headersData.map(({label, href}) => (
+              <NavMenu key={label}>
+                <NavLink onClick={onToggle} hasbackground={label === 'Contact Us' && 'blue' || null} to={href} activestyle="true">
+                  {label}
+                </NavLink>
+              </NavMenu>
+          ))
+         }
+        </NavBtn>
+      
       <NavToggle onClick={onToggle} />
     </>
-  );
+  )
 }

@@ -65,8 +65,10 @@ const SubscriberComponent = styled(Stack)`
 	--sub-comp-radius: 51px;
 	// margin: 0 20px;
 
-	padding-left: 20px;
-  	padding-right: 20px;
+	@media screen and (min-width: 425px) {
+		padding-left: 20px;
+	  	padding-right: 20px;
+  	}
 
 	@media screen and (min-width: 768px) {
 		display: flex;

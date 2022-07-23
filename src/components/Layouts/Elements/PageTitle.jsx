@@ -5,24 +5,12 @@ import { breakParagraph } from './breakParagraph';
 const Div = styled(Grid)`
     background: transparent linear-gradient(180deg, var(--shadedBlue3) 0%, var(--dark) 100%) 0% 0% no-repeat padding-box;
     color: var(--white);
-     height: 150px;
     position: relative;
     display: flex;
     place-item: center;
+    height: ${prop => prop.scale === 'large' ? "calc(100vh - 100px)" : '350px' };   
 
     &::before {
-     display: none;
-    }
-
-    &::after {
-     display: none;
-    }
-
-    height: ${prop => prop.scale === 'large' ? "calc(100vh - 100px)" : '300px' };
-
-    @media screen and (min-width: 768px) {
-
-      &::before {
         position: absolute;
         content: '';
         left: 20%;
@@ -48,11 +36,13 @@ const Div = styled(Grid)`
           backdrop-filter: blur(16px);
           -webkit-backdrop-filter: blur(16px);
       }
-    }
 
      @media screen and (max-width: 768px) {
       &::before {
         left: 20px;
+      }
+       &::after {
+        width: 100%;
       }
     }
 `;
@@ -94,7 +84,6 @@ const Title = styled(Typography)`
       background: var(--white);
     }
   }
-
 `;
 
 
@@ -102,7 +91,7 @@ export default function PageTitle({ data, scale }) {
   const isLarge = scale == 'large';
   const symbol = '%';
   return (
-      <Div container item width="100%" scale={scale} xs={12} md={12} mt={0} spacing={3} p={3} mb={3} ml={0} >
+      <Div container item width="100%" scale={scale} xs={12} md={12} mt={0} spacing={3} p={3} ml={0} >
         <Stack
           className="css-1fnsymr-MuiContainer-root"
           sx={{
@@ -126,15 +115,15 @@ export default function PageTitle({ data, scale }) {
             }
               
             </Typography>
-            <Typography mt={2} sx={{ display: { xs: 'block', md: 'none' }}}>
-  Our tools are easy to set up and use with a user friendly dashboard that enables you to set up, launch, automate and manage multi-affiliate campaigns in 5 minutes.
+            <Typography mt={2} sx={{ display: { xs: 'block', md: 'none', margin: '16px 0 20px' }}}>
+                Our tools are easy to set up and use with a user friendly dashboard that enables you to set up, launch, automate and manage multi-affiliate campaigns in 5 minutes.
               </Typography>
           </Content>
           {
             isLarge && 
-            <Stack sx={{ display: { xs: 'none', md: 'block' }, width: { xs: '100%', sm: '500px' } ,position: { sm: 'absolute', xs: 'relative', zIndex: '2' }, bottom: '10%', right: { xs: '0', sm: '10%' }, }}>
+            <Stack  sx={{ display: { xs: 'none', md: 'block' }, margin: '16px 0 20px', width: { xs: '100%', sm: '500px' } ,position: { sm: 'absolute', xs: 'relative', zIndex: '2' }, bottom: '10%', right: { xs: '0', sm: '10%' }, }}>
               <Typography lineHeight="1.90em">
-  Our tools are easy to set up and use with a user friendly dashboard that enables you to set up, launch, automate and manage multi-affiliate campaigns in 5 minutes.
+                Our tools are easy to set up and use with a user friendly dashboard that enables you to set up, launch, automate and manage multi-affiliate campaigns in 5 minutes.
               </Typography>
             </Stack>
           }
